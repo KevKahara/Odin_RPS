@@ -1,103 +1,84 @@
 //Variables to keep track of both party's score
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 //Function to get human choice
 function getHumanChoice() {
-    const userInput = prompt('Choose either rock paper or scissors');
-
-    if(userInput === 'rock') {
-        return 'You chose Rock';
-    } else if(userInput === 'paper') {
-        return 'You chose Paper';
-    } else if(userInput === 'scissors') {
-        return 'You chose scissors';
-    }
+    const userInput = prompt('Choose either rock paper or scissors').toLowerCase();
+    return userInput;
 }
 
-console.log(getHumanChoice());
+getHumanChoice();
 
 //Function to get computer choice
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
 
     if(randomChoice === 0) {
-        return 'Computer chose rock';
+        return 'rock';
     } else if(randomChoice === 1) {
-        return 'Computer chose paper';
+        return 'paper';
     } else if(randomChoice === 2) {
-        return 'Computer chose scissors';
+        return 'scissors';
     }
 }
 
-console.log(getComputerChoice());
+getComputerChoice();
 
 //Function to play for a single round
 function playRound(humanChoice, computerChoice) {
-    
+    console.log(`You chose ${humanChoice}`);
+    console.log(`Computer chose ${computerChoice}`);
+
     switch(humanChoice) {
         case 'rock':
-            switch(computerChoice) {
-                case 'rock':
-                    console.log('Its a tie!');
-                    break;
-
-                    case 'paper':
-                        console.log('Computer Wins!')
-                        computerScore++;
-                        break;
-
-                    case 'scissors':
-                        console.log('You Win!');
-                        humanScore++;
-                        break;
+            if(computerChoice === 'rock') {
+                console.log('Its a tie!');
+            } else if(computerChoice === 'paper') {
+                console.log('Computer Wins!');
+                computerScore++;
+            } else if(computerChoice === 'scissors') {
+                console.log('You win!');
+                humanScore++;
             }
 
             break;
 
         case 'paper':
-            switch(computerChoice) {
-                case 'rock':
-                    console.log('You win!');
-                    humanScore++;
-                    break;
-
-                case 'paper':
-                    console.log('Its a Tie!');
-                    break;
-
-                case 'scissors':
-                    console.log('Computer Wins!');
-                    computerScore++;
-                    break;
+            if(computerChoice === 'rock') {
+                console.log('You win!');
+                humanScore++;
+            } else if(computerChoice === 'paper') {
+                console.log('Its a tie!');
+            } else if(computerChoice === 'scissors') {
+                console.log('Computer Wins!');
+                computerScore++;
             }
 
             break;
-
 
         case 'scissors':
-            switch(computerChoice) {
-                case 'rock':
-                    console.log('Computer Wins!');
-                    computerScore++;
-                    break;
-
-                case 'paper':
-                    console.log('You win!');
-                    humanScore++;
-                    break;
-
-                case 'scissors':
-                    console.log('Its a tie!');
-                    break;
+            if(computerChoice === 'rock') {
+                console.log('Computer Wins!');
+                computerScore++;
+            } else if(computerChoice === 'paper') {
+                console.log('You win!');
+                humanScore++;
+            } else if(computerChoice === 'scissors') {
+                console.log('Its a tie');
             }
-
+            
             break;
 
+        default:
+            console.log('Invalid choice');
     }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
+playRound(humanSelection, computerSelection);
+
+function playGame() {
+}
