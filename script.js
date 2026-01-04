@@ -8,8 +8,6 @@ function getHumanChoice() {
     return userInput;
 }
 
-getHumanChoice();
-
 //Function to get computer choice
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
@@ -22,8 +20,6 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-
-getComputerChoice();
 
 //Function to play for a single round
 function playRound(humanChoice, computerChoice) {
@@ -75,10 +71,23 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-
 function playGame() {
+    for(let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        const roundResult = playRound(humanSelection, computerSelection);
+
+        console.log(`Player: ${humanScore}`);
+        console.log(`Computer: ${computerScore}`);
+
+    }
 }
+
+if(computerScore > humanScore) {
+    console.log('Computer Wins!');
+} else if(humanScore > computerScore) {
+    console.log('You win!');
+}
+
+playGame();
