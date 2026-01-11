@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+    margin-top: 50px;
+}
+
+.header-text {
+    font-size: 45px;
+    font-weight: 900;
+    text-align: center;
+    margin: 45px;
+}
+
+.main-text {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 32px;
+}
+
+#rock {
+    background-color: #ff0000;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#paper {
+    background-color: #00ff00;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#scissors {
+    background-color: #0000ff;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+#choice-container {
+    border: 2px solid #000;
+    background-color: #00ff00;
+}
+
+#score-container {
+    border: 2px solid #000;
+    background-color: #ff0000;
+}
+
+#Result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    margin-top: 25px;
+    padding: 25px;
+}
